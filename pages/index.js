@@ -10,7 +10,6 @@ export default function Home({ news }) {
             <Link href={`/news/${news.id}`}>
               <a>
                 <p>{news.title}</p>
-                <div>{news.body}</div>
               </a>
             </Link>
           </li>
