@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { client } from "../libs/client";
+import styles from '../styles/Index.module.scss';
 
-export default function Home({ news }) {
+export default function Index({ news }) {
   return (
-    <div>
+    <div className={styles.main}>
       <ul>
         {news.map((news) => (
           <li key={news.id}>

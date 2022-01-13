@@ -1,17 +1,18 @@
-// pages/blog/[id].js
 import { client } from "../../libs/client";
+import styles from '../../styles/Index.module.scss';
 
 export default function NewsId({ news }) {
   return (
-    <main>
-      <h1>{news.title}</h1>
-      <p>{news.publishedAt}</p>
+    <div className={styles.main}>
+      <h1 className={styles.title}>{news.title}</h1>
+      <p className={styles.publishedAt}>{news.publishedAt}</p>
       <div
         dangerouslySetInnerHTML={{
           __html: `${news.body}`,
         }}
+        className={styles.post}
       />
-    </main>
+    </div>
   );
 }
 
