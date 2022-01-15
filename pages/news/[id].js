@@ -5,12 +5,12 @@ export default function NewsId({ news }) {
   return (
     <div className={styles.main}>
       <h1 className={styles.title}>{news.title}</h1>
-      <p className={styles.publishedAt}>{news.publishedAt}</p>
+      <p className={styles.time}>{news.publishedAt}</p>
       <div
         dangerouslySetInnerHTML={{
           __html: `${news.body}`,
         }}
-        className={styles.post}
+        className={styles.body}
       />
     </div>
   );

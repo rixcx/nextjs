@@ -1,9 +1,10 @@
 @use "global/common" as common;
 
 .main {
-  width: 960px;
+  width: 100%;
+  max-width: 980px;
   margin: 0 auto;
-  padding: 30px;
+  padding: 60px;
   background-color:common.$color-white;
   border-radius: 10px;
 }
@@ -13,22 +14,26 @@
   font-weight: bold;
 }
 
-.publishedAt {
-  margin-bottom: 40px;
+.time {
+  margin-top: 10px;
+  font-weight: bold;
+  color: common.$color-font-thin;
 }
 
-.post {
+.body {
+margin-top: 60px;
+
   & > h1 {
-    font-size: 30px;
+    font-size: 1.8em;
     font-weight: bold;
-    margin: 40px 0 20px;
+    margin-bottom: 20px;
     background-color: #eee;
     padding: 10px 20px;
     border-radius: 5px;
   }
 
   & > h2 {
-    font-size: 24px;
+    font-size: 1.6em;
     font-weight: bold;
     margin: 40px 0 16px;
     border-bottom: 1px solid #ddd;

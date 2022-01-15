@@ -1,10 +1,13 @@
 @use "global/common" as common;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Ubuntu:wght@400;700&display=swap');
 
 .wrap {
+  font-family:  'Ubuntu', 'Noto Sans JP', sans-serif;
   background-color: common.$color-bg;
   min-height: 100vh;
   border-left: common.$color-white 40px solid;
   border-right: common.$color-white 40px solid;
+  background: url(/bg.png) repeat center top / 500px;
 
   &::before {
     content: "";
