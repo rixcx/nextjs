@@ -5,12 +5,13 @@ import styles from '../styles/Index.module.scss';
 export default function Index({ news }) {
   return (
     <div className={styles.main}>
-      <ul>
+      <ul className={styles.posts}>
         {news.map((news) => (
-          <li key={news.id}>
+          <li key={news.id} className={styles.post}>
             <Link href={`/news/${news.id}`}>
               <a>
-                <p>{news.title}</p>
+                <h2 className={styles.title}>{news.title}</h2>
+                <p className={styles.time}>{news.publishedAt}</p>
               </a>
             </Link>
           </li>

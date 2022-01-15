@@ -1,14 +1,19 @@
-import Navbar from './navbar'
+import Header from './header'
 import Footer from './footer'
+import styles from '../styles/Layout.module.scss';
 
 export default function Layout({ children }) {
   return (
     <>
-      <Navbar />
-        <main>
-            {children}
-        </main>
-      <Footer />
+      <div className={styles.wrap}>
+        <div className={styles.inner}>
+          <Header />
+            <main>
+                {children}
+            </main>
+          <Footer />
+        </div>
+      </div>
     </>
   )
 }

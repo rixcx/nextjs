@@ -1,5 +1,5 @@
 import { client } from "../../libs/client";
-import styles from '../../styles/Index.module.scss';
+import styles from '../../styles/Blog-detail.module.scss';
 
 export default function NewsId({ news }) {
   return (
