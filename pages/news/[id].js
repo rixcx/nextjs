@@ -1,11 +1,13 @@
 import { client } from "../../libs/client";
+import Date from "../../libs/date";
+
 import styles from '../../styles/Blog-detail.module.scss';
 
 export default function NewsId({ news }) {
   return (
     <div className={styles.main}>
       <h1 className={styles.title}>{news.title}</h1>
-      <p className={styles.time}>{news.publishedAt}</p>
+      <p className={styles.time}><Date dateString={news.publishedAt} /></p>
       <div
         dangerouslySetInnerHTML={{
           __html: `${news.body}`,
@@ -13,6 +15,7 @@ export default function NewsId({ news }) {
         className={styles.body}
       />
     </div>
+    
   );
 }
 

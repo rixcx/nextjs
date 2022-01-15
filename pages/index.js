@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { client } from "../libs/client";
+import Date from "../libs/date";
 import styles from '../styles/Index.module.scss';
 
 export default function Index({ news }) {
@@ -11,7 +12,7 @@ export default function Index({ news }) {
             <Link href={`/news/${news.id}`}>
               <a>
                 <h2 className={styles.title}>{news.title}</h2>
-                <p className={styles.time}>{news.publishedAt}</p>
+                <p className={styles.time}><Date dateString={news.publishedAt} /></p>
               </a>
             </Link>
           </li>
