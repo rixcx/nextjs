@@ -5,7 +5,7 @@
   max-width: 980px;
   margin: 0 auto;
   padding: 60px;
-  background-color:common.$color-white;
+  background-color: common.$color-white;
   border-radius: 10px;
 }
 
@@ -21,31 +21,128 @@
 }
 
 .body {
-margin-top: 60px;
+  margin-top: 60px;
+  font-size: 1rem; //16px
+  
+  & > h1, h2, h3, h4, h5 {
+    font-weight: bold;
+    margin: 1.4em auto 0.7em;
+  }
 
   & > h1 {
-    font-size: 1.8em;
-    font-weight: bold;
-    margin-bottom: 20px;
-    background-color: #eee;
-    padding: 10px 20px;
-    border-radius: 5px;
+    font-size: 1.8rem;
   }
 
   & > h2 {
-    font-size: 1.6em;
-    font-weight: bold;
-    margin: 40px 0 16px;
-    border-bottom: 1px solid #ddd;
+    font-size: 1.6rem;
+  }
+
+  & > h3 {
+    font-size: 1.4rem;
+  }
+
+  & > h4 {
+    font-size: 1.2rem;
+  }
+
+  & > h5 {
+    font-size: 1rem;
   }
 
   & > p {
     line-height: 1.8;
     letter-spacing: 0.2px;
+    
+    & > a {
+      color: common.$color-font-thin;
+      text-decoration: underline;
+      text-underline-offset: 0.2rem;
+      transition: opacity .3s;
+      
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+
+    & > code {
+      background-color: #fff;
+      border: 1px #ccc solid;
+      border-radius: 3px;
+      padding: 0.1rem 0.2rem;
+      color: #ff2f74;
+      margin: 0 0.1rem;
+    }
+  }
+  
+  & img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  & > blockquote {
+    position: relative;
+    padding: 1.25rem 1rem 1rem;
+    border-left: #e9f1f1 0.4rem solid;
+    color: #979f9f;
+    z-index: 1;
+
+    &::before {
+      content: "\201C";
+      position: absolute;
+      top: 37px;
+      left: 0px;
+      font-family: serif;
+      font-size: 7rem;
+      line-height: 1rem;
+      color: #e9f1f1;
+      z-index: -1;
+    }
+    
+    & > a {
+      margin-top: 1rem;
+      text-decoration: underline;
+      text-underline-offset: 0.2rem;
+      transition: opacity .3s;
+      
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  & > pre {
+    padding: 1.5rem;
+    background-color: #3a3a3a;
+    border-radius: 3px;
+    color: #e5e5e5;
+  }
+
+  & > ol, ul {
+    list-style-position: inside;
+    
+    > li + li {
+      margin-top: 0.6rem;
+    }
   }
 
   & > ol {
     list-style-type: decimal;
-    list-style-position: inside;
+  }
+
+  & > ul {
+    list-style-type: disc;
+
+    > li {
+      > ul {
+        list-style: circle;
+        list-style-position: inside;
+        padding-left: 1rem;
+        margin-top: 0.5rem;
+        
+        > li + li {
+          margin-top: 0.3rem;
+        }
+      }
+    }
   }
 }
