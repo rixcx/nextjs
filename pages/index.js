@@ -3,16 +3,16 @@ import { client } from "../libs/client";
 import Date from "../libs/date";
 import styles from '../styles/Index.module.scss';
 
-export default function Index({ news }) {
+export default function Index({ blog }) {
   return (
     <div className={styles.main}>
       <ul className={styles.posts}>
-        {news.map((news) => (
-          <li key={news.id} className={styles.post}>
-            <Link href={`/news/${news.id}`}>
+        {blog.map((blog) => (
+          <li key={blog.id} className={styles.post}>
+            <Link href={`/blog/${blog.id}`}>
               <a>
-                <h2 className={styles.title}>{news.title}</h2>
-                <p className={styles.time}><Date dateString={news.publishedAt} /></p>
+                <h2 className={styles.title}>{blog.title}</h2>
+                <p className={styles.time}><Date dateString={blog.date} /></p>
               </a>
             </Link>
           </li>
@@ -24,11 +24,11 @@ export default function Index({ news }) {
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async () => {
-  const data = await client.get({ endpoint: "news" });
+  const data = await client.get({ endpoint: "blog" });
 
   return {
     props: {
-      news: data.contents,
+      blog: data.contents,
     },
   };
 };

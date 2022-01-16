@@ -3,16 +3,16 @@ import Date from "../../libs/date";
 
 import styles from '../../styles/Blog-detail.module.scss';
 
-export default function NewsId({ news }) {
+export default function blogId({ blog }) {
   return (
     <div className={styles.main}>
       <div className={styles.header}>
-        <h1 className={styles.title}>{news.title}</h1>
-        <p className={styles.time}><Date dateString={news.publishedAt} /></p>
+        <h1 className={styles.title}>{blog.title}</h1>
+        <p className={styles.time}><Date dateString={blog.date} /></p>
       </div>
       <div
         dangerouslySetInnerHTML={{
-          __html: `${news.body}`,
+          __html: `${blog.body}`,
         }}
         className={styles.body}
       />
@@ -23,20 +23,20 @@ export default function NewsId({ news }) {
 
 // 静的生成のためのパスを指定します
 export const getStaticPaths = async () => {
-  const data = await client.get({ endpoint: "news" });
+  const data = await client.get({ endpoint: "blog" });
 
-  const paths = data.contents.map((content) => `/news/${content.id}`);
+  const paths = data.contents.map((content) => `/blog/${content.id}`);
   return { paths, fallback: false };
 };
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-  const data = await client.get({ endpoint: "news", contentId: id });
+  const data = await client.get({ endpoint: "blog", contentId: id });
 
   return {
     props: {
-      news: data,
+      blog: data,
     },
   };
 };
