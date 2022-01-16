@@ -20,7 +20,7 @@
     pointer-events: none;
     
     @include common.mediaquery(sp) {
-      border: common.$body-border-width-sp common.$color-white solid;
+      content: none;
     }
   }
 }
@@ -29,6 +29,6 @@
   padding: common.$body-border-width-pc calc(common.$body-border-width-pc * 2);
   
   @include common.mediaquery(sp) {
-    padding: common.$body-border-width-sp calc(common.$body-border-width-sp * 2);
+    padding: 0.1px common.$body-border-width-sp;
   }
 }
