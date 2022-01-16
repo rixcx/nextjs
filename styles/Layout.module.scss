@@ -1,30 +1,34 @@
 @use "global/common" as common;
 
-.wrap {
-  font-family: 'Ubuntu', 'Noto Sans JP', sans-serif;
-  background-color: common.$color-bg;
+.body {
   min-height: 100vh;
-  border-left: common.$color-white 40px solid;
-  border-right: common.$color-white 40px solid;
   background: url(/bg.png) repeat center top / 500px;
+  font-family: "Ubuntu", "Noto Sans JP", sans-serif;
 
-  &::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    width: calc(100vw - common.$wrap-border-width);
-    border-top: common.$color-white common.$wrap-border-width solid;
+  @include common.mediaquery(sp) {
+    background-size: 350px;
   }
-  
+
   &::after {
     content: "";
+    top: 0;
+    border: common.$body-border-width-pc common.$color-white solid;
     position: fixed;
-    bottom: 0;
-    width: calc(100vw - common.$wrap-border-width);
-    border-bottom: common.$color-white common.$wrap-border-width solid;
+    height: 100vh;
+    width: 100vw;
+    z-index: 999;
+    pointer-events: none;
+    
+    @include common.mediaquery(sp) {
+      border: common.$body-border-width-sp common.$color-white solid;
+    }
   }
 }
 
 .inner {
-  padding: common.$wrap-border-width;
+  padding: common.$body-border-width-pc calc(common.$body-border-width-pc * 2);
+  
+  @include common.mediaquery(sp) {
+    padding: common.$body-border-width-sp calc(common.$body-border-width-sp * 2);
+  }
 }

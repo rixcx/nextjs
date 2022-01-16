@@ -4,50 +4,74 @@
   width: 100%;
   max-width: 980px;
   margin: 0 auto;
-  padding: 60px;
+  padding: 3.75rem;
   background-color: common.$color-white;
   border-radius: 10px;
+  
+  @include common.mediaquery(sp) {
+    padding: 1.875rem 1.25rem;
+  }
 }
 
 .header {
+  margin-bottom: 3.75rem;
   padding-bottom: 1.25rem;
   border-bottom: 1px #dde4e4 solid;
+  
+  @include common.mediaquery(sp) {
+    margin-bottom: 1.875rem;
+    padding-bottom: 0.9375rem;
+  }
 }
 
 .title {
   font-size: 2em;
   font-weight: bold;
+  
+  @include common.mediaquery(sp) {
+    font-size: 1.875rem;
+  }
 }
 
 .time {
-  margin-top: 10px;
+  margin-top: 0.625rem;
   font-weight: bold;
   color: common.$color-font-thin;
-}
-
-.body {
-  margin-top: 60px;
-  font-size: 1rem;
   
+  @include common.mediaquery(sp) {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+  }
+}
+  
+.body {
   & > h1, h2, h3, h4, h5 {
     font-weight: bold;
     margin: 1.4em auto 0.5rem;
   }
 
   & > h1 {
-    font-size: 1.8rem;
+    font-size: 1.75rem;
+    
+    @include common.mediaquery(sp) {
+      font-size: 1.625rem;
+    }
   }
 
   & > h2 {
-    font-size: 1.6rem;
+    font-size: 1.625rem;
+    
+    @include common.mediaquery(sp) {
+      font-size: 1.5rem;
+    }
   }
 
   & > h3 {
-    font-size: 1.4rem;
+    font-size: 1.375rem;
   }
 
   & > h4 {
-    font-size: 1.2rem;
+    font-size: 1.125rem;
   }
 
   & > h5 {
@@ -112,6 +136,7 @@
     background-color: #3a3a3a;
     border-radius: 3px;
     color: #e5e5e5;
+    overflow-x: scroll;
   }
 
   & > ol, ul {

@@ -4,18 +4,22 @@
   width: 100%;
   max-width: 980px;
   margin: 0 auto;
-  padding: 60px;
+  padding: 3.75rem;
   background-color: common.$color-white;
   border-radius: 10px;
   
   @include common.mediaquery(sp) {
-    padding: 30px;
+    padding: 1.875rem 1.25rem;
   }
 }
 
 .post {
   + .post {
     margin-top: 60px;
+    
+    @include common.mediaquery(sp) {
+      margin-top: 1.875rem;
+    }
   }
 
   > a {
@@ -25,11 +29,20 @@
   .title {
     font-size: 2em;
     font-weight: bold;
+    
+    @include common.mediaquery(sp) {
+      font-size: 1.5rem;
+    }
   }
 
   .time {
-    margin-top: 10px;
+    margin-top: 0.625rem;
     font-weight: bold;
     color: common.$color-font-thin;
+    
+    @include common.mediaquery(sp) {
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+    }
   }
 }
