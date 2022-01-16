@@ -9,6 +9,11 @@
   border-radius: 10px;
 }
 
+.header {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px #dde4e4 solid;
+}
+
 .title {
   font-size: 2em;
   font-weight: bold;
@@ -22,11 +27,11 @@
 
 .body {
   margin-top: 60px;
-  font-size: 1rem; //16px
+  font-size: 1rem;
   
   & > h1, h2, h3, h4, h5 {
     font-weight: bold;
-    margin: 1.4em auto 0.7em;
+    margin: 1.4em auto 0.5rem;
   }
 
   & > h1 {
@@ -57,11 +62,7 @@
       color: common.$color-font-thin;
       text-decoration: underline;
       text-underline-offset: 0.2rem;
-      transition: opacity .3s;
-      
-      &:hover {
-        opacity: 0.6;
-      }
+      @include common.hover;
     }
 
     & > code {
@@ -102,11 +103,7 @@
       margin-top: 1rem;
       text-decoration: underline;
       text-underline-offset: 0.2rem;
-      transition: opacity .3s;
-      
-      &:hover {
-        opacity: 0.6;
-      }
+      @include common.hover;
     }
   }
 

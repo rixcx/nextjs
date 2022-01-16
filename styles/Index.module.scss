@@ -5,22 +5,23 @@
   max-width: 980px;
   margin: 0 auto;
   padding: 60px;
-  background-color:common.$color-white;
+  background-color: common.$color-white;
   border-radius: 10px;
+  
+  @include common.mediaquery(sp) {
+    padding: 30px;
+  }
 }
 
 .post {
-  +.post {
+  + .post {
     margin-top: 60px;
   }
-  
+
   > a {
-      transition: opacity .3s;
-    &:hover {
-      opacity: 0.6;
-    }
+    @include common.hover;
   }
-  
+
   .title {
     font-size: 2em;
     font-weight: bold;

@@ -6,8 +6,10 @@ import styles from '../../styles/Blog-detail.module.scss';
 export default function NewsId({ news }) {
   return (
     <div className={styles.main}>
-      <h1 className={styles.title}>{news.title}</h1>
-      <p className={styles.time}><Date dateString={news.publishedAt} /></p>
+      <div className={styles.header}>
+        <h1 className={styles.title}>{news.title}</h1>
+        <p className={styles.time}><Date dateString={news.publishedAt} /></p>
+      </div>
       <div
         dangerouslySetInnerHTML={{
           __html: `${news.body}`,
