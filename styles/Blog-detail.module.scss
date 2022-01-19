@@ -25,16 +25,18 @@
 }
 
 .title {
-  font-size: 2em;
+  font-size: 2.5rem; //40
   font-weight: bold;
+  line-height: 1.5em;
   
   @include common.mediaquery(sp) {
-    font-size: 1.5rem;
+    font-size: 1.625rem; //26
   }
 }
 
 .time {
   margin-top: 0.625rem;
+  font-size: 1.125rem;
   font-weight: bold;
   color: common.$color-font-thin;
   
@@ -47,39 +49,39 @@
 .body {
   & > h1, h2, h3, h4, h5 {
     font-weight: bold;
-    margin: 1.4em auto 0.5rem;
+    margin: 2em auto 0.5rem;
   }
 
   & > h1 {
-    font-size: 1.75rem;
+    font-size: 1.875rem; //30
     
     @include common.mediaquery(sp) {
-      font-size: 1.5rem;
+      font-size: 1.5rem; //24
     }
   }
 
   & > h2 {
-    font-size: 1.625rem;
+    font-size: 1.5rem; //24
     
     @include common.mediaquery(sp) {
-      font-size: 1.375rem;
+      font-size: 1.375rem; //22
     }
   }
 
   & > h3 {
-    font-size: 1.375rem;
+    font-size: 1.25rem; //20
     
     @include common.mediaquery(sp) {
-      font-size: 1.25rem;
+      font-size: 1.25rem; //20
     }
   }
 
   & > h4 {
-    font-size: 1.125rem;
+    font-size: 1rem; //16px
   }
 
   & > h5 {
-    font-size: 1rem;
+    font-size: 1rem; //16px
   }
 
   & > p {
@@ -90,13 +92,6 @@
       line-height: 1.6;
     }
     
-    & > a {
-      color: common.$color-font-thin;
-      text-decoration: underline;
-      text-underline-offset: 0.2rem;
-      @include common.hover;
-    }
-
     & > code {
       background-color: #fff;
       border: 1px #ccc solid;
@@ -107,6 +102,14 @@
     }
   }
   
+  & a {
+    padding: 0 0.1rem;
+    color: common.$color-font-thin;
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
+    @include common.hover;
+  }
+    
   & img {
     max-width: 100%;
     height: auto;
@@ -140,11 +143,13 @@
   }
 
   & > pre {
+    margin: 0.5rem 0;
     padding: 1.5rem;
+    line-height: 1.5;
     background-color: #3a3a3a;
     border-radius: 3px;
     color: #e5e5e5;
-    overflow-x: scroll;
+    overflow-x: auto;
   }
 
   & > ol, ul {
