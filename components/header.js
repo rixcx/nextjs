@@ -6,9 +6,7 @@ export default function Header() {
   <header className={styles.header}>
 <h1>
   <Link href="/">
-    <a>
-      r.blog
-    </a>
+    <a>r.blog</a>
   </Link>
 </h1>
   </header>
