@@ -30,5 +30,6 @@ export const getStaticProps = async () => {
       blog: data.contents,
     },
   };
-  
+
+
 };
