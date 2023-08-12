@@ -49,11 +49,11 @@
 .body {
   & > h1, h2, h3, h4 {
     font-weight: bold;
-    margin: 2.5em auto 0.5rem;
+    margin: 2.5em auto 0.8rem;
   }
 
   & > h1 {
-    font-size: 1.875rem; //30
+    font-size: 2rem; //32
     
     @include common.mediaquery(sp) {
       font-size: 1.5rem; //24
@@ -84,17 +84,17 @@
     line-height: 1.8;
     letter-spacing: 0.2px;
     word-break: break-word;
-    
-    & > code {
-      background-color: #fff;
-      border: 1px #ccc solid;
-      border-radius: 3px;
-      padding: 0.1rem 0.2rem;
-      color: #ff2f74;
-      margin: 0 0.1rem;
-    }
   }
-  
+
+  :not(pre) code {
+    background-color: #fff;
+    border: 1px #ccc solid;
+    border-radius: 3px;
+    padding: 0.1rem 0.2rem;
+    color: #ff2f74;
+    margin: 0 0.1rem;
+  }
+
   & a {
     padding: 0 0.1rem;
     color: common.$color-font-thin;
@@ -172,6 +172,20 @@
 
   & > ol {
     list-style-type: decimal;
+    
+    > li {
+      padding-left: 1.4em;
+      text-indent: -1.4em;
+      
+      &::marker {
+        font-size: 1.2rem;
+        color: common.$color-font-thin;
+      }
+    }
+
+    > li + li {
+      margin-top: 0.8rem;
+    }
   }
 
   & > ul {
